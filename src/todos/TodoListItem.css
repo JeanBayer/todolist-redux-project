@@ -7,6 +7,10 @@
   box-shadow: 0 4px 8px grey;
 }
 
+.todo-completed {
+  background: #dbfcdb;
+}
+
 .buttons-container {
   position: absolute;
   right: 12px;

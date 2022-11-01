@@ -9,14 +9,27 @@ const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed }) => {
   return (
     <div className="list-wrapper">
       <NewTodoForm />
-      {todos.map((todo) => (
-        <TodoListItem
-          key={todo.id}
-          todo={todo}
-          onRemovePressed={onRemovePressed}
-          onCompletedPressed={onCompletedPressed}
-        />
-      ))}
+      {todos
+        .filter((todo) => !todo.isCompleted)
+        .map((todo) => (
+          <TodoListItem
+            key={todo.id}
+            todo={todo}
+            onRemovePressed={onRemovePressed}
+            onCompletedPressed={onCompletedPressed}
+          />
+        ))}
+      <hr />
+      {todos
+        .filter((todo) => todo.isCompleted)
+        .map((todo) => (
+          <TodoListItem
+            key={todo.id}
+            todo={todo}
+            onRemovePressed={onRemovePressed}
+            onCompletedPressed={onCompletedPressed}
+          />
+        ))}
     </div>
   );
 };
