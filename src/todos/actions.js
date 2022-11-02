@@ -5,15 +5,15 @@ export const createTodo = (todo) => ({
 });
 
 export const REMOVE_TODO = "REMOVE_TODO";
-export const removeTodo = (text) => ({
+export const removeTodo = (id) => ({
   type: REMOVE_TODO,
-  payload: { text },
+  payload: { id },
 });
 
 export const MARK_TODO_AS_COMPLETED = "MARK_TODO_AS_COMPLETED";
-export const markTodoAsCompleted = (text) => ({
+export const markTodoAsCompleted = (updatedTodo) => ({
   type: MARK_TODO_AS_COMPLETED,
-  payload: { text },
+  payload: { updatedTodo },
 });
 
 export const LOAD_TODOS_IN_PROGRESS = "LOAD_TODOS_IN_PROGRESS";
